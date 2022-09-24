@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
-const PORT = 3000
+
+require('dotenv').config()
+const env = process.env
+
 const routes = require('./routes')
-app.listen(PORT)
 app.use(routes)
+
+app.listen(env.PORT)
