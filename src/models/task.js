@@ -1,21 +1,16 @@
 'use strict';
 
-const { Model } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('./Sequelize')
 
-module.exports = (sequelize, DataTypes) => {
-  class Task extends Model {
-    static associate(models) {
+class Task extends Model {}
 
-    }
-  }
+Task.init({
+  title: DataTypes.STRING,
+  description: DataTypes.STRING
+}, {
+  sequelize,
+  modelName: 'Task',
+})
 
-  Task.init({
-    title: DataTypes.STRING,
-    description: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Task',
-  })
-
-  return Task;
-}
+module.exports = Task
