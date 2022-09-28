@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "pass",
-    "database": "db",
+    "database": "tasks_api",
     "host": "localhost",
     "dialect": "mysql"
   },
