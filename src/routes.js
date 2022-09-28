@@ -1,23 +1,15 @@
 const router = require('express').Router()
 
-router.get('/task/all', (req, res) => {
-    res.send(`all tasks`)
-})
+const TaskController = require('./controllers/TaskController')
 
-router.post('/task/store', (req, res) => {
-    res.send('storing task...')
-})
+router.get('/task/all', TaskController.show)
 
-router.put('/task/edit/:id', (req, res) => {
-    res.send(`editing task ${req.params.id}`)
-})
+router.post('/task/store', TaskController.store)
 
-router.delete('/task/remove/:id', (req, res) => {
-    res.send(`removing task ${req.params.id}`)
-})
+router.put('/task/edit/:id', TaskController.update)
 
-router.get('/task/:id', (req, res) => {
-    res.send(`task ${req.params.id}`)
-})
+router.delete('/task/remove/:id', TaskController.delete)
+
+router.get('/task/:id', TaskController.index)
 
 module.exports = router
