@@ -18,10 +18,15 @@ DB_PORT=3306
 DB_NAME=db
 PMA_PORT=8080
 ```
-## Run
+## Install dependencies and run docker
 ```shell
 yarn install
 docker-compose -f 'docker-compose.yml' up -d
+```
+Após instalar as dependências e iniciar os containers docker, crie o arquivo de configuração do sequelize para rodar as migrations.
+## Run migrations and start server
+```shell
+npx sequelize-cli init:config
 npx sequelize-cli db:migrate
 yarn dev
 ```
