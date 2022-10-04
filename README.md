@@ -16,6 +16,7 @@ DB_USER=root
 DB_PASS=pass
 DB_PORT=3306
 DB_NAME=db
+PMA_PORT=8080
 ```
 ## Run
 ```shell
